@@ -25,6 +25,9 @@
 #### 例子：
 
 ```tsx
+import { AutoScroll } from 'du-react-common'; // 导入模块
+import 'du-react-common/lib/index.css'; // 导入样式
+
  <AutoScroll>
     {
       Array(24).fill('').map((_, index) => <div key={index}>{index}</div>)

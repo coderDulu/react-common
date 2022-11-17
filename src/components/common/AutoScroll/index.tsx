@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
-import './index.css'
+import styles from './index.module.less';
+
 
 interface propsType {
   children: any;
@@ -29,7 +30,7 @@ export default function autoScroll(props: propsType) {
   return (
     <div
       style={props.style}
-      className={`scroll ${props.className} `}
+      className={`${styles.scroll} ${props.className} `}
       ref={scrollRef}
       onMouseEnter={e => handleMouseEnter(e, 'auto')}
       onMouseLeave={e => handleMouseEnter(e, 'hidden')}

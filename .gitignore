@@ -26,9 +26,12 @@ yarn-error.log*
 main.js
 main.js.*
 
-*
-/src/*
-!/src/components/
-!/src/utils/
-!/src/websocket/
-!plugin
+# *
+# /src/*
+# !/src/components/
+# !/src/utils/
+# !/src/websocket/
+# !plugin
+
+lib
+websocket_server
