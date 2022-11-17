@@ -31,21 +31,19 @@ export class WsOpen extends WebSocket {
     this.onerror = () => {
       console.log('service connect failed');
     };
+
+    this._init();
+
+    this._run();
   }
 
   // 初始化请求
   /**
    * 与组件渲染时配合请求数据
-   * @param page 网页标识
    * @param fn 回调函数
    * @returns 
    */
-  init(page: string, fn?: Function) {
-    // console.log(this.readyState, page, fn);
-    const _fn = () => {
-      this.send(JSON.stringify({ page }));
-      fn && fn();
-    };
+  _init(fn?: Function) {
 
     if (this.readyState === 1) {
       _fn();
@@ -56,14 +54,14 @@ export class WsOpen extends WebSocket {
       if(this.backCommon.length) {
         this.backCommon.forEach(common => this.send(common));
       }
-      _fn();
+      fn && fn();
     });
 
     return this;
   }
 
   // 执行监听websocket消息
-  run() {
+  _run() {
     // console.log(this.event);
     this.onmessage = (e) => {
       let res = {};
@@ -71,7 +69,7 @@ export class WsOpen extends WebSocket {
         res = JSON.parse(e.data);
       } catch (error) {}
 
-      this.listen(res);
+      this._listen(res);
     };
   }
 
@@ -96,7 +94,7 @@ export class WsOpen extends WebSocket {
 
   // 监听触发回调(监听者：name_action)
   // { name: 'test', action: 'get' } => test_get
-  listen<T extends dataType>(data: T | {}) {
+  _listen<T extends dataType>(data: T | {}) {
     let { name, action } = data as T;
     let type = `${name}`
     if(action) {

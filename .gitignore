@@ -26,15 +26,9 @@ yarn-error.log*
 main.js
 main.js.*
 
-# *
-# /*
+*
 /src/*
 !/src/components/
 !/src/utils/
 !/src/websocket/
-public
-package*
-tsconfig*
-webpack*
-.gitignore
-lib
+!plugin
