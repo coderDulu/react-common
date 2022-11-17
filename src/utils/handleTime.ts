@@ -5,3 +5,4 @@
 export function getTime() {
   return new Date().toTimeString().replace(/\sGMT.*/, '');
 }
+

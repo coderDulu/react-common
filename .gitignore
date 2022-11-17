@@ -36,3 +36,5 @@ public
 package*
 tsconfig*
 webpack*
+.gitignore
+lib

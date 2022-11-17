@@ -141,4 +141,4 @@ export class WsOpen extends WebSocket {
   }
 }
 
-export default new WsOpen(wsurl);
+export default WsOpen;
