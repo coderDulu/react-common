@@ -32,7 +32,7 @@ export class Ws {
    * @param type 订阅名
    * @param fn 对应的回调
    */
-  add(type: string, fn: () => {}): void;
+  add(type: string, fn: (res: any) => void): void;
   addMore(typeObj: WsAddType[]): void;
   request(params: requestType): void;
   remove(type: string, fn?: Function): void;
