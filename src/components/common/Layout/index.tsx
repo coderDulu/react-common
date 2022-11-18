@@ -32,7 +32,7 @@ export default function NavBar({ menuItems, footer, title, logo, children }: pro
             </div>
           </Col>
           {/* 菜单 */}
-          <Col className={styles.menus}>
+          <Col span={20} className={styles.menus}>
             {menuItems?.length && <Menu onClick={onClick} mode="horizontal" items={menuItems} selectedKeys={[current]}/>}
           </Col>
         </Row>
