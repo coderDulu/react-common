@@ -81,6 +81,7 @@ export class WsOpen extends WebSocket {
    */
   add(type: string, fn: Function) {
     this.event[type] = fn;
+    return this;
   }
 
   // 添加多个事件订阅
@@ -113,6 +114,7 @@ export class WsOpen extends WebSocket {
     } else {
       this.backCommon.push(JSON.stringify(params));
     }
+    return this
   }
 
   // 移除订阅
