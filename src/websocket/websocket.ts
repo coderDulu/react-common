@@ -46,7 +46,7 @@ export class WsOpen extends WebSocket {
   _init(fn?: Function) {
 
     if (this.readyState === 1) {
-      fn();
+      fn && fn();
       return;
     }
 
